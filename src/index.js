@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 1) necesitamos la variable React en scope
+/*ES6 Module: import React from "react" 
+crea una variable React con todo lo que tiene adentro de "react"
+va a ir a node modules a ver todo lo que hay en dependencia react
+y va a revisar el index, si tiene algo que se importa lo obtiene
+*/
+// Common JS : const React = require("react")
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import React from "react"
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 2) necesitamos la variable ReactDOM en scope
+import ReactDOM from "react-dom"
+
+// 3) necesitamos un componente en scope
+
+/*
+function App () {
+    return "Hola mundo"
+} */
+
+//const App = () => "Hola mundo flecha resumida"
+import App from "./App.js" 
+// le pongo exactamente donde está para que no vaya a buscarlo 
+// a node modules
+
+// para importar estilo
+import "./estilo.css"
+
+// 4) necesitamos poner el componente en el DOM
+ReactDOM.render(<App/>, document.getElementById("root"))
