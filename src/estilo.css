@@ -14,23 +14,25 @@ html, body {
     flex-direction: column;
 }
 
+ul {
+    list-style-type: none; }
+
 a {
     text-decoration: none;
     color: black;
 }
 
+
 #leyout-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0.5rem 1rem;
     background-color: rgb(199, 34, 13);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 2);
 }
 
-#leyout-header nav a {
+#leyout-header nav li {
     margin-left: 1rem;
 }
+
 
 main {
     flex-grow: 1;
@@ -42,4 +44,11 @@ footer {
     background-color: rgb(199, 34, 13);
     text-align: center;
     font-size: 0.8rem;
+}
+
+
+.navDerecha{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

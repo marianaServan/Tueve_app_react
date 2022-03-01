@@ -1,12 +1,24 @@
 import React from 'react'
+import CartWidget from './CartWidget'
 
 const Nav = () => {
   return (
-    <nav className='nav'>
-            <a href="" className='nav-link'>Eventos</a>
-            <a href="" className='nav-link'>Happy Hours</a>
-            <a href="" className='nav-link'>Mapa</a>
-    </nav>
+        <div className="collapse navbar-collapse navDerecha" >
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a href="/" className='nav active'>Eventos</a>
+            </li>
+            <li className="nav-item">
+              <a href="/" className='nav'>Happy Hours</a>
+            </li>
+            <li className="nav-item">
+              <a href="/" className='nav'>Mapa</a>
+            </li>
+            <li className="nav-item">
+              < CartWidget />
+            </li>
+          </ul>
+        </div>
 
   )
 }

@@ -9,8 +9,7 @@ const Main = (props) => {
 
     return (
         <main>
-            <h2> Bienvenido {nombre}! </h2>
-            <p> Estás en {ciudad} </p>
+            <p> {nombre}, estás en {ciudad}. </p>
         </main>
     );
 }
