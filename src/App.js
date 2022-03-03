@@ -12,23 +12,16 @@ import React from 'react'
 import Header from "./components/Header"
 import Main from "./components/Main"
 import Footer from "./components/Footer"
-import ItemListContainer from './components/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const App = () => {
-    
-    /*const persona = {
-         nombre: "Juan",
-         edad:"32"
-    */
 
     return (
         <>
-            <Header />
-            <ItemListContainer greeting={"Bienvenidos a Tueve"}/>
-            <Main nombre="Mariana" ciudad="Santa Fe"/>
-            <Footer />            
+            <Header/>
+            <Main/>        
+            <Footer />             
         </>
     )
 }

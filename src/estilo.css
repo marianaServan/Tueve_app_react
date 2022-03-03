@@ -52,3 +52,8 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.botonesCounter{
+    background-color:rgb(199, 34, 13);
+    color: white;
+}

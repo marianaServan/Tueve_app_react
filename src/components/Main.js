@@ -1,15 +1,18 @@
 import React from 'react'
+import ItemListContainer from './ItemListContainer'
 
 const Main = (props) => {
 
-    //console.log(props)
-    //console.log(props.nombre)
-    //console.log(props.edad)
-    const {nombre, ciudad} = props
+    /*const resultado = useState()
+    const estado = resultado[0]
+    const setEstado = resultado[1]
+    Forma reducida:*/
+
+
 
     return (
         <main>
-            <p> {nombre}, estás en {ciudad}. </p>
+            <ItemListContainer greeting={"Bienvenidos a Tueve"} />
         </main>
     );
 }
