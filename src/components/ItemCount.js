@@ -1,13 +1,12 @@
 import React from 'react'
-
 import { useState } from 'react';
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ producto, initial }) {
 
     const [count, setCount] = useState(initial)
 
     const increment = () => {
-        if (count < stock) {
+        if (count < producto.stock) {
             setCount(count + 1)
         } else {
             alert('Producto agotado')
@@ -20,7 +19,7 @@ function ItemCount({ stock, initial }) {
         }
     }
 
-    const onAdd = () => {    
+    const onAdd = () => {
         alert('Agregaste al carrito ' + count + ' productos')
         setCount(initial)
     }
@@ -28,7 +27,7 @@ function ItemCount({ stock, initial }) {
     return (
         <div className="card" style={{ "maxWidth": "18rem" }}>
             <div className="card-body">
-                <h5 className="card-title">Producto 1</h5>
+                <h5 className="card-title"> {producto.nombre} </h5>
                 <p className="card-text">Descripción del producto</p>
                 <button onClick={decrement} className="btn botonesCounter"> - </button>
                 <span> {count} </span>
