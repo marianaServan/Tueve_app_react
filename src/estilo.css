@@ -56,4 +56,11 @@ footer {
 .botonesCounter{
     background-color:rgb(199, 34, 13);
     color: white;
+    margin: 2px;
+}
+
+.listaDeProductos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

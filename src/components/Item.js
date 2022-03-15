@@ -1,11 +1,17 @@
 import React from 'react'
-import ItemCount from './ItemCount';
+
 
 function Item({ producto }) {
     return (
-        <div>
-            <ItemCount producto={producto} initial={1} />
+        <div className="card" style={{ "maxWidth": "20rem" }}>
+            <div className="card-body">
+                <img src={producto.imagen} alt="" style={ {"maxWidth": "18rem"}}/>
+                <h5 className="card-title"> {producto.nombre} </h5>
+                <p className="card-text">Descripción del producto</p>
+                <button className="btn botonesCounter"> Ver más </button>
+            </div>
         </div>
+
     )
 }
 

@@ -4,7 +4,7 @@ import Item from './Item'
 function ItemList({ productosAListar }) {
 
     return (
-        <div>
+        <div className="listaDeProductos">
 
             {productosAListar.map((producto) => {
                 return <Item key={producto.id} producto={producto} />
