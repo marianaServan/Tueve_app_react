@@ -1,17 +1,17 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ evento }) => {
     return (
-        <div className="listaDeProductos">
+        <div className="listaDeEventos">
             <div>
-                <img src={producto.imagen} alt="" style={{ "maxWidth": "18rem" }} />
+               <img src={evento.imagen} alt="" style={{ "maxWidth": "18rem" }} />
             </div>
             <div>
-                <h5 className="card-title"> {producto.nombre} </h5>
-                <p className="card-text">Descripción del producto</p>
+                <h5 className="card-title"> {evento.nombre} </h5>
+                <p className="card-text">Descripción del evento, de qué se tarta, la fecha, el lugar, precio de la entrada, etc</p>
                 <hr />
-                <ItemCount producto={producto} initial={1} />
+                <ItemCount evento={evento} initial={1} />
             </div>
         </div>
     )

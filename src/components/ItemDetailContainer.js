@@ -1,37 +1,39 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
-import products from '../dataBase/products.js'
+import products from '../dataBase/products.js';
 
-function pedidoDetalle(id) {
+function pedidoDetalle(eventoid) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const encontrado = products.find( function(itemIterado){
-        return (itemIterado.id === id);
+        return (itemIterado.id === Number(eventoid) );
       })
       resolve(encontrado)
     }, 2000)
   })
 }
 
-const ItemDetailContainer = ({ titulo, id }) => {
+const ItemDetailContainer = ({ titulo }) => {
 
-    const [producto, setProducto] = useState([])
+    const [evento, setEvento] = useState([])
+    const { eventoid } = useParams()
 
     useEffect(() => {
-      pedidoDetalle(id)
+      pedidoDetalle(eventoid)
           .then((resultado) => {
             console.log("Estuvo bien")
-            setProducto(resultado)
+            setEvento(resultado)
           })
           .catch((error) => {
             console.log("Estuvo mal")
           })
-      }, [])
+      }, [eventoid])
 
   return (
     <div>
         <h2>{titulo}</h2>
-        <ItemDetail producto={producto} />
+        <ItemDetail evento={evento} />
     </div>
   )
 }

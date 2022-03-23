@@ -59,7 +59,7 @@ footer {
     margin: 2px;
 }
 
-.listaDeProductos{
+.listaDeEventos{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
