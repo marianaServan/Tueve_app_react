@@ -1,15 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 
-function ItemCount({ producto, initial }) {
+function ItemCount({ evento, initial, onAdd }) {
 
     const [count, setCount] = useState(initial)
 
     const increment = () => {
-        if (count < producto.stock) {
+        if (count < evento.stock) {
             setCount(count + 1)
         } else {
-            alert('Producto agotado')
+            alert('Entradas agotadas')
         }
     }
 
@@ -17,11 +17,6 @@ function ItemCount({ producto, initial }) {
         if (count > 0) {
             setCount(count - 1)
         }
-    }
-
-    const onAdd = () => {
-        alert('Agregaste al carrito ' + count + ' productos')
-        setCount(initial)
     }
 
     return (
@@ -32,7 +27,12 @@ function ItemCount({ producto, initial }) {
                 <button onClick={increment} className="btn botonesCounter"> + </button>
             </div>
             <div>
-                <button disabled={count === 0} onClick={onAdd} className="btn botonesCounter"> Agregar al carrito </button>
+                <button
+                disabled={count === 0} 
+                onClick={() => onAdd(count)} 
+                className="btn botonesCounter"> 
+                    Agregar al carrito 
+                </button>
             </div>
         </div>
     )

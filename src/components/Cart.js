@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Carrito = () => {
+const Cart = () => {
   return (
     <div>carrito</div>
   )
 }
 
-export default Carrito
+export default Cart
