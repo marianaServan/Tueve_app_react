@@ -64,3 +64,9 @@ footer {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

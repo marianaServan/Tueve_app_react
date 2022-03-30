@@ -6,12 +6,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
+import MiProvider from "./components/MiContexto";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Main />
+      <MiProvider>
+        <Header />
+        <Main />
+      </MiProvider>
       <Footer />
       <ToastContainer />
     </BrowserRouter>

@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useContext, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Link } from "react-router-dom"
+import { miContexto } from './MiContexto'
+
 
 const ItemDetail = ({ evento }) => {
 
-    const [countCart, setCountCart] = React.useState (0)
+    const { addItem } = useContext(miContexto)
+
+    const [countCart, setCountCart] = useState (0)
  
     const onAdd = (count) => {
         setCountCart(count)
-        console.log('Agregaste al carrito productos')
+        console.log('Agregaste al carrito tickets');
+        addItem(evento,count);
     }
 
     return (
