@@ -1,13 +1,13 @@
 import React from "react";
 import Item from "./Item";
 
-function ItemList({ eventosAListar }) {
+function ItemList({ eventsList }) {
   return (
     <div className="listaDeEventos">
       <div className="container">
         <div className="row">
-          {eventosAListar.map((evento) => {
-            return <Item key={evento.id} evento={evento} />;
+          {eventsList.map((event) => {
+            return <Item key={event.id} event={event} />;
           })}
         </div>
       </div>

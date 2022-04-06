@@ -2,44 +2,41 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import ItemList from "./ItemList";
-import products from "../dataBase/products.js";
-/*import { TruckFlatbed } from "react-bootstrap-icons";*/
+import { getAllEvents, getEventsByCategory } from "../dataBase/firebase";
 
-function pedidoPorCategoria(categoriaid) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (categoriaid === undefined) {
-        resolve(products);
-      } else {
-        const encontrados = products.filter(function (itemIterado) {
-          return itemIterado.categoria === categoriaid;
-        });
-        resolve(encontrados);
-      }
-      }, 2000);
-    });
-}
-
-function ItemListContainer({ greeting }) {
+const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(true);
-  const [eventos, seteventos] = useState([]);
-  const { categoriaid } = useParams();
+  const [events, setEvents] = useState([]);
+  const { categoryid } = useParams();
 
   useEffect(() => {
     toast.info("Trayendo eventos ...");
 
-    pedidoPorCategoria(categoriaid)
-      .then((resultado) => {
+    if (categoryid) {
+      getEventsByCategory(categoryid)
+      .then( respuesta => {
         toast.dismiss();
-        seteventos(resultado);
+        setEvents(respuesta)
+      })
+    } else {
+      getAllEvents()
+      .then( respuesta => setEvents(respuesta) ) 
+    }
+
+    setLoading(false);
+
+    /* .then( (respuesta) => {
+        toast.dismiss();
+        setEvents(respuesta)
       })
       .catch((error) => {
         toast.error("Error al traer los eventos");
       })
       .finally(() => {
         setLoading(false);
-      });
-  }, [categoriaid]);
+      }); */
+
+  }, [categoryid]);
 
   if (loading) {
     return <h1> Cargando... </h1>;
@@ -49,10 +46,10 @@ function ItemListContainer({ greeting }) {
         <h1>{greeting}</h1>
 
         <h2> Eventos </h2>
-        <ItemList eventosAListar={eventos} />
+        <ItemList eventsList={events} />
       </div>
     );
   }
-}
+};
 
 export default ItemListContainer;

@@ -9,8 +9,8 @@ const Main = () => {
     <main className="pantallaCompleta">
       <Routes>
         <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Tueve"} />} />
-        <Route path="/categoria/:categoriaid" element={<ItemListContainer greeting={`Categoría`} />} />
-        <Route path="/evento/:eventoid" element={<ItemDetailContainer titulo={"Detalle del evento"} />} />
+        <Route path="/categoria/:categoryid" element={<ItemListContainer greeting={`Categoría`} />} />
+        <Route path="/evento/:eventid" element={<ItemDetailContainer titulo={"Detalle del evento"} />} />
         <Route path="/Carrito" element={<Cart />} />
       </Routes>
     </main>

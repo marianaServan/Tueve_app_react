@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
-import { miContexto } from "./MiContexto";
+import { miContexto } from "./MiContexto"
 
 const Nav = () => {
+  
   const { calcularCantidad } = useContext(miContexto);
 
   return (
@@ -38,7 +39,7 @@ const Nav = () => {
           <NavLink to="/Carrito">
             <div className="carrito">
               <CartWidget />
-              {calcularCantidad() !== 0 ? ( calcularCantidad() ) : () => {}}
+              {calcularCantidad() !== 0 ? ( calcularCantidad() ) : null}
             </div>
           </NavLink>
         </li>
