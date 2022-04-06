@@ -38,7 +38,7 @@ const Nav = () => {
           <NavLink to="/Carrito">
             <div className="carrito">
               <CartWidget />
-              {calcularCantidad() !== 0 ? ( calcularCantidad() ) : () => {}}
+              {calcularCantidad() !== 0 ? ( calcularCantidad() ) : null}
             </div>
           </NavLink>
         </li>
