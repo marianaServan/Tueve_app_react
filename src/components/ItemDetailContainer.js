@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 import { getEventsById } from "../dataBase/firebase";
 
 const ItemDetailContainer = ({ titulo }) => {
+  const [loading, setLoading] = useState(true);
+  const [evento, setEvento] = useState([]);
+  const { eventid } = useParams();
 
-    const [evento, setEvento] = useState([])
-    const { eventid } = useParams()
+  useEffect(() => {
+    getEventsById(eventid)
+      .then((respuesta) => {
+        setEvento(respuesta);
+      })
+      .catch(() => toast.error("Error al cargar los eventos"))
+      .finally(() => setLoading(false));
+  }, [eventid]);
 
-    useEffect(() => {
-
-      getEventsById(eventid)
-      .then( respuesta => {setEvento(respuesta)})
-      }, [eventid]) 
-
-  return (
-    <div>
+  if (loading) {
+    return <h1> Cargando... </h1>;
+  } else {
+    return (
+      <div>
         <h2>{titulo}</h2>
         <ItemDetail evento={evento} />
-    </div>
-  )
-}
+      </div>
+    );
+  }
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

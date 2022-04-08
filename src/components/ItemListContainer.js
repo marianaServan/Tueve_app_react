@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { getAllEvents, getEventsByCategory } from "../dataBase/firebase";
 
@@ -10,31 +10,18 @@ const ItemListContainer = ({ greeting }) => {
   const { categoryid } = useParams();
 
   useEffect(() => {
-    toast.info("Trayendo eventos ...");
 
     if (categoryid) {
       getEventsByCategory(categoryid)
-      .then( respuesta => {
-        toast.dismiss();
-        setEvents(respuesta)
-      })
+      .then( respuesta => setEvents(respuesta))
+      .catch(() => toast.error("Error al cargar los eventos"))
+      .finally(() => setLoading(false));
     } else {
       getAllEvents()
       .then( respuesta => setEvents(respuesta) ) 
+      .catch(() => toast.error("Error al cargar los eventos"))
+      .finally(() => setLoading(false));
     }
-
-    setLoading(false);
-
-    /* .then( (respuesta) => {
-        toast.dismiss();
-        setEvents(respuesta)
-      })
-      .catch((error) => {
-        toast.error("Error al traer los eventos");
-      })
-      .finally(() => {
-        setLoading(false);
-      }); */
 
   }, [categoryid]);
 

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, query, where } from "firebase/firestore";
+import { getFirestore, collection, doc, getDocs, getDoc, query, where, addDoc, Timestamp } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCR6O4e7Cg2GwvXs35UlfWqZ0AhU2K52Ig",
@@ -52,4 +52,15 @@ export async function getEventsById(id){
 
   const resultDoc = await getDoc(docref);
   return {...resultDoc.data(), id: resultDoc.id}
+}
+
+// Generar orden de compra
+export async function generateOrder(order){
+  const date = Timestamp.now();
+  const orderWithDate = {...order, timestamp: date};
+
+  const ordersCollection = collection(db, "ordenes");
+  const orderRef = await addDoc(ordersCollection, orderWithDate);
+
+  return orderRef.id;
 }
