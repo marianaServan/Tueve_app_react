@@ -6,7 +6,6 @@ function CartWidget() {
   return (
     <div>
         < CartFill />
-              
     </div>
   )
 }

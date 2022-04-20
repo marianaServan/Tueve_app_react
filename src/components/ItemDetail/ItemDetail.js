@@ -1,7 +1,8 @@
 import React, {useContext, useState } from 'react'
 import ItemCount from './ItemCount'
 import { Link } from "react-router-dom"
-import { miContexto } from './MiContexto'
+import { miContexto } from '../MiContexto'
+import { toast } from "react-toastify";
 
 
 const ItemDetail = ({ evento }) => {
@@ -12,7 +13,14 @@ const ItemDetail = ({ evento }) => {
  
     const onAdd = (count) => {
         setCountCart(count)
-        console.log('Agregaste al carrito tickets');
+        toast.success('Agregaste tickets al carrito', {
+            position: "top-center",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+        });
         addItem(evento,count);
     }
 

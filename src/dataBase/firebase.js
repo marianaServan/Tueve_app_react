@@ -14,7 +14,6 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 
-// Obtener todos los eventos
 export async function getAllEvents() {
   const eventsCollection = collection(db, "eventos");
   const eventsSnap = await getDocs(eventsCollection);
@@ -29,7 +28,6 @@ export async function getAllEvents() {
   return result;
 }
 
-// Obtener los eventos por categoria
 export async function getEventsByCategory(category) {
   const eventsCollection = collection(db, "eventos");
   const eventsQuery = query(eventsCollection, where("categoria", "==", category));
@@ -45,7 +43,6 @@ export async function getEventsByCategory(category) {
   return result;
 }
 
-// Obtener un evento por id
 export async function getEventsById(id){
   const eventsCollection = collection(db, "eventos");
   const docref = doc (eventsCollection, id);
@@ -54,7 +51,6 @@ export async function getEventsById(id){
   return {...resultDoc.data(), id: resultDoc.id}
 }
 
-// Generar orden de compra
 export async function generateOrder(order){
   const date = Timestamp.now();
   const orderWithDate = {...order, timestamp: date};

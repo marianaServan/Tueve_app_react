@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Tueve App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Presentación
 
-## Available Scripts
+Tueve es una web app ya desarrollada y en funcionamiento que muestra todos los eventos de la ciudad de Santa Fe, permite hacer búsquedas por categoría, fecha, región, etc.
 
-In the project directory, you can run:
+En este proyecto, trabajo final del curso de ReactJs de Coder House, se presenta una versión en la cual se implementa la venta de tickets, servicio que aún no se presta en la web app real.
 
-### `npm start`
+## Instalación
+A continuación se detallan los pasos a seguir para instalar el proyecto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clonar el repositorio desde [GitHub](https://github.com/marianaServan/app_react)
+2. Instalar las dependencias del proyecto usando `npm install`
+3. Para ejecutar la app correr `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Finalizado el paso `3`, podrá verlo en su navegador automáticamente, [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+## Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+No es necesario realizar los pasos de instalación para ver la app en funcionamiento, para esto puede visitar: [TueveApp](https://wondrous-profiterole-b2d510.netlify.app/)
 
-### `npm run build`
+## Tecnología usada:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Interfaz: `ReactJS - Create React App`
+* Estilos: `Bootstrap`
+* Routing: `React Router Dom`
+* Base de datos: `Firebase`
+* Sistema de notificaciones: `React Toastify`
+* Servicio de alojamiento: `Netlify`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

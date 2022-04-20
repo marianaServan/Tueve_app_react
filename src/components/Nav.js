@@ -26,16 +26,6 @@ const Nav = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/HappyHours" className="nav-item nav">
-            Happy Hours
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/Lugares" className="nav-item nav">
-            Lugares
-          </NavLink>
-        </li>
-        <li className="nav-item">
           <NavLink to="/Carrito">
             <div className="carrito">
               <CartWidget />

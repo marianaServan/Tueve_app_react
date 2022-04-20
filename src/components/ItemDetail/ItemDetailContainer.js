@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import { getEventsById } from "../dataBase/firebase";
+import { getEventsById } from "../../dataBase/firebase";
 
 const ItemDetailContainer = ({ titulo }) => {
   const [loading, setLoading] = useState(true);
@@ -10,12 +10,21 @@ const ItemDetailContainer = ({ titulo }) => {
   const { eventid } = useParams();
 
   useEffect(() => {
+
     getEventsById(eventid)
       .then((respuesta) => {
         setEvento(respuesta);
       })
-      .catch(() => toast.error("Error al cargar los eventos"))
+      .catch(() => toast.error('Error al cargar los eventos', {
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        }))
       .finally(() => setLoading(false));
+      
   }, [eventid]);
 
   if (loading) {

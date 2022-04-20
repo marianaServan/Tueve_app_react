@@ -16,7 +16,17 @@ const App = () => {
         <Main />
       </MiProvider>
       <Footer />
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </BrowserRouter>
   );
 };
