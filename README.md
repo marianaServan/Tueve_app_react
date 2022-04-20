@@ -19,6 +19,8 @@ Finalizado el paso `3`, podrá verlo en su navegador automáticamente, [http://l
 
 No es necesario realizar los pasos de instalación para ver la app en funcionamiento, para esto puede visitar: [TueveApp](https://wondrous-profiterole-b2d510.netlify.app/)
 
+Además en el siguiente video se puede ver el funcionamiento del carrito: [ver video](https://screenrec.com/share/pyGuKJC0IM) 
+
 ## Tecnología usada:
 
 * Interfaz: `ReactJS - Create React App`
