@@ -9,7 +9,7 @@ En este proyecto, trabajo final del curso de ReactJs de Coder House, se presenta
 ## Instalación
 A continuación se detallan los pasos a seguir para instalar el proyecto:
 
-1. Clonar el repositorio desde [GitHub](https://github.com/marianaServan/app_react)
+1. Clonar el repositorio desde [GitHub](https://github.com/marianaServan/Tueve_app_react)
 2. Instalar las dependencias del proyecto usando `npm install`
 3. Para ejecutar la app correr `npm start`
 
